@@ -31,7 +31,7 @@ public class Screen {
     }
 
     public void showPageSizeQuestion() {
-        System.out.println("Qual o tamando desejado da memória?");
+        System.out.println("Qual o tamando dsejado das páginas?");
         System.out.println("(prefira valores da PG: 2, 4, 8, 16, 32, 64...)");
         System.out.println("(não escolha um valor superior ao tamanho da memória)");
         int pageSize = input.nextInt();
@@ -69,14 +69,18 @@ public class Screen {
         System.out.println("O que gostaria de fazer agora?");
         System.out.println("[1] Registrar processo");
         System.out.println("[2] Começar novamente");
-        System.out.println("[3] Sair");
+        System.out.println("[3] Visualizar memória livre e processos");
+        System.out.println("[4] Sair");
         int opt = input.nextInt();
         switch(opt){
             case 1: GeneralController.getInstance().goToRegistrateProcess();
                     break;
             case 2: GeneralController.getInstance().start();
                     break;
-            case 3:
+            case 3: GeneralController.getInstance().printAll();
+                    this.showOptMenu();
+                    break;
+            case 4:
                     break;
             default:
         }

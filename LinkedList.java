@@ -8,20 +8,24 @@ public class LinkedList {
     
     public LinkedList(int memSize, int pageSize) {
     
-    for(int i=0; i<memSize/pageSize; i++){
-        if (this.size == 0) {
-            Cell newCell = new Cell(i);
-            this.first = newCell;
-            this.last = this.first;
-        } else {
-            Cell newCell = new Cell(i);
-            this.last.setNext(newCell);
-            this.last = newCell;
+        for(int i=0; i<memSize/pageSize; i++){
+            if (this.size == 0) {
+                Cell newCell = new Cell(i);
+                this.first = newCell;
+                this.last = this.first;
+            } else {
+                Cell newCell = new Cell(i);
+                this.last.setNext(newCell);
+                this.last = newCell;
+            }
+            this.size++;
         }
-        this.size++;
+    
     }
     
-  }
+    public Cell getFirst(){
+        return this.first;
+    }
     
     public int takePage() {
         Cell store = this.first;

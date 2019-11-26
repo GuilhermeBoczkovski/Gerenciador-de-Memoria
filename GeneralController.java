@@ -60,4 +60,8 @@ public class GeneralController {
             Screen.getInstance().showOkBegin();
         }
     }
+
+    void printAll() {
+        GerenciadorDeMemoria.getInstance().printAll();
+    }
 }
